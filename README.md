@@ -10,7 +10,7 @@ Tools
 5. [Heroku Cloud](www.heroku.com)
 
 
-## A new python virtual environment
+## A new python virtual environment.
 
 To create environment
 
