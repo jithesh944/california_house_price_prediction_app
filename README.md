@@ -14,19 +14,19 @@ Tools
 
 To create environment
 
-'''
+```
 conda create -p venv 
-'''
+```
 
 To activate
-"""
+```
 conda activate venv
-"""
+```
 
 To Deactivate
-"""
+```
 conda deactivate
-"""
+```
 
 
 Libraries used avaible in requirements.txt
