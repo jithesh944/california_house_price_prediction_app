@@ -32,6 +32,6 @@ conda deactivate
 Libraries used avaible in requirements.txt
 
 To install 
-'''
+```
 pip install -r requirements.txt
-'''
+```
