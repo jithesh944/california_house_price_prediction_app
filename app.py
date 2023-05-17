@@ -13,8 +13,12 @@ std_scalar = pickle.load(open('scalar_func.pkl','rb'))
 def home():
     return render_template('home.html')
 
+
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
+    """
+    This function is used for API testing.
+    """
     data = request.json['data']
     print(data)
     in_value_array = (np.array(list(data.values())).reshape(1,-1))
@@ -24,6 +28,12 @@ def predict_api():
     print('final_predict',final_predict)
     return "Success"
 
+@app.route('/predict',methods=["POST"])
+def predict():
+    form_data = [float(i) for i in request.form.values()]
+    final_data = std_scalar.transform(np.array(form_data).reshape(1,-1))
+    predicted_value = lr_model.predict(final_data)[0]
+    return render_template("home.html",prediction_text= f"the house price prediction {predicted_value}")
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,7 +2,7 @@
 import requests
 from requests.structures import CaseInsensitiveDict
 
-url = "http://127.0.0.1:5000/predict_api"
+url = "http://127.0.0.1:5000/predict"
 
 headers = CaseInsensitiveDict()
 headers["Content-Type"] = "application/json"
@@ -25,4 +25,5 @@ data = """
 resp = requests.post(url, headers=headers, data=data)
 print(resp)
 
-print(resp.content)
+
+# print(resp.content)
