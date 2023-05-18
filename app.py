@@ -33,7 +33,7 @@ def predict():
     form_data = [float(i) for i in request.form.values()]
     final_data = std_scalar.transform(np.array(form_data).reshape(1,-1))
     predicted_value = lr_model.predict(final_data)[0]
-    return render_template("home.html",prediction_text= f"the house price prediction {predicted_value}")
+    return render_template("home.html",prediction_text= f"The house price prediction in california region {predicted_value}")
 
 if __name__ == '__main__':
     app.run(debug=True)

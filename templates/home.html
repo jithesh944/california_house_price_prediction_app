@@ -4,34 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <title>ML API</title>
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
     <div class="login">
-        <h1>
+        <!-- <h1>
             California House price prediction
-        </h1>
+        </h1> -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <h2>
+                    <a class="navbar-item">California House price prediction</a>
+                </h2>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a style="font-size:20px" class="fa fa-github  navbar-text"
+                            href="https://github.com/jithesh944">jithesh944</a>
+                        <a class="navbar-text fa fa-linkedin-square" style="font-size:20px"
+                            href="https://www.linkedin.com/in/jitheshsunny">jitheshsunny</a>
+                        <!-- <a class="github-fork-ribbon-css"
+                            href="https://github.com/jithesh944/california_house_price_prediction_app"
+                            data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a> -->
+                        <a class="navbar-text fa fa-code-fork" style="font-size:20px"
+                            href="https://github.com/jithesh944/california_house_price_prediction_app">Fork me on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+
         <form action="{{url_for('predict')}}" method="POST">
-            <input type="text" name="MedInc" placeholder="MedInc" required="required"/><br>
+            <input type="text" name="MedInc" placeholder="MedInc" required="required" /><br>
             <input type="text" name="HouseAge" placeholder="HouseAge" required="required" /><br>
             <input type="text" name="AveBedrms" placeholder="AveBedrms" required="required" /><br>
             <input type="text" name="Population" placeholder="Population" required="required" /><br>
             <input type="text" name="AveOccup" placeholder="AveOccup" required="required" /><br>
             <input type="text" name="Latitude" placeholder="Latitude" required="required" /><br>
             <input type="text" name="Longitude" placeholder="Longitude" required="required" /><br>
- 
 
-            <button type="submit" class="btn btn-primary btn-block btn-large" > Predict</button>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block btn-large"> Predict</button>
 
         </form>
-
+    <br>
     </div>
-{{prediction_text}}
+    <div>
+        <div class="alert alert-info" role="alert">
+          <h2> {{prediction_text}}</h2> 
+          </div>
+    </div>
+
 </body>
 
 </html>
