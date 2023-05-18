@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ML API</title>
+    <title>California House price prediction</title>
     <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -49,30 +49,57 @@
             </div>
         </nav>
 
-
-
-
-
-
         <form action="{{url_for('predict')}}" method="POST">
-            <input type="text" name="MedInc" placeholder="MedInc" required="required" /><br>
-            <input type="text" name="HouseAge" placeholder="HouseAge" required="required" /><br>
-            <input type="text" name="AveBedrms" placeholder="AveBedrms" required="required" /><br>
-            <input type="text" name="Population" placeholder="Population" required="required" /><br>
-            <input type="text" name="AveOccup" placeholder="AveOccup" required="required" /><br>
-            <input type="text" name="Latitude" placeholder="Latitude" required="required" /><br>
-            <input type="text" name="Longitude" placeholder="Longitude" required="required" /><br>
+            <table style="width:100%" class="table-light table-striped table-hover table">
+                <tr>
+                    <th> Features </th>
+                    <th> Values </th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>Median Income</td>
+                        <td><input type="text" name="MedInc" placeholder="MedInc" required="required" /><br></td>
+                    </tr>
+                    <tr>
+                        <td>Median House age in the area</td>
+                        <td><input type="text" name="HouseAge" placeholder="HouseAge" required="required" /><br></td>
+                    </tr>
+                    <tr>
+                        <td>Average number of bedrooms</td>
+                        <td><input type="text" name="AveBedrms" placeholder="AveBedrms" required="required" /><br></td>
+                    </tr>
+                    <tr>
+                        <td>Block group population</td>
+                        <td><input type="text" name="Population" placeholder="Population" required="required" /><br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Average occupancy </td>
+                        <td><input type="text" name="AveOccup" placeholder="AveOccup" required="required" /><br></td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td><input type="text" name="Latitude" placeholder="Latitude" required="required" /><br></td>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td>
+                        <td><input type="text" name="Longitude" placeholder="Longitude" required="required" /><br></td>
+                    </tr>
+
+                </tbody>
+            </table>
 
             <br>
             <button type="submit" class="btn btn-primary btn-block btn-large"> Predict</button>
 
         </form>
-    <br>
+        <br>
     </div>
     <div>
         <div class="alert alert-info" role="alert">
-          <h2> {{prediction_text}}</h2> 
-          </div>
+            <h2> {{prediction_text}}</h2>
+        </div>
     </div>
 
 </body>
